@@ -1,0 +1,104 @@
+/* General Reset to remove default magins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333; /* Dark background color */
+    padding: 10px 20px; /* Spacing inside navbar */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+/* Logo Styles */
+.logo {
+    color: white; /* White text color */
+    font-size: 24px; /* Larger font size */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hamburger Icon Styles */
+/* The fix: Our custom styles now override any conflicting styles from Font Awesome */
+.menu-toggle {
+    color: white; /* White color for the icon */
+    font-size: 24px; /* Size of the icon */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: none; /* Hidden by default, shown on small screens */
+}
+
+/* Navigation Menu Styles */
+.menu {
+    display: flex; /* Display menu items horizontally */
+    align-items:center; /* Center items vertically */
+}
+
+/* Menu List Styles */
+.menu ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Display list items inline */
+}
+
+/* Menu Item Styles */
+.menu li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+/* Menu Link Styles */
+.menu a {
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size for menu items */
+}
+
+/* Hover Effect for Menu Links */
+.menu a:hover {
+    color: #ddd; /* Lighter color on hover */
+}
+
+/* Content Styles */
+.content {
+    padding: 20px; /* Spacing around content */
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    /* Show the hamburger icon */
+    .menu-toggle {
+        display: block; /* Show the icon */
+    }
+
+    /* Hide the menu by default in mobile view */
+    .menu {
+        display: none; /* Hide menu */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Positioning relative to navbar */
+        background-color: #333; /* Same background as navbar */
+        top: 60px; /* Position below the navbar */
+        left: 0; /* Align to the left */
+        right: 0; /* Align to the right */
+        z-index: 1; /* Ensure it appears above other content. Stay on top of other elements. */
+        padding: 20px 0; /* Padding inside the menu */
+    }
+
+    /* Show the menu when active */
+    .menu.active {
+        display: flex; /* Show menu */
+    }
+
+    /* Adjust the menu list for mobile */
+    .menu ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    /* Adjust menu items for mobile */
+    .menu li {
+        margin: 10px 0; /* Space between items */
+    }
+}
